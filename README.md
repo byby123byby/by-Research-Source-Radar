@@ -1,8 +1,8 @@
 <div align="center">
 
-# Research Discovery and Translation Audit
+# Research Source Radar
 
-**Find broadly. Verify identity. Translate mechanisms. Audit every claim.**
+**Give it a paper, project name, screenshot, or rough idea. It finds the real source, related work, and what is actually reusable.**
 
 ![Status: public preview](https://img.shields.io/badge/status-public%20preview-2E8B57)
 ![Tests: 228 passing](https://img.shields.io/badge/tests-228%20passing-2E8B57)
@@ -15,11 +15,13 @@
 
 > **Public preview.** The repository is available for inspection and use. Cross-platform CI and wider independent evaluation remain ongoing.
 
-A portable Agent Skill for reproducible research discovery, authoritative source-identity verification, mechanism translation, and source-to-outcome auditing. It keeps two questions separate: **Can this source run directly?** and **Can its mechanism or evidence still transfer?**
+Research Source Radar turns a vague research lead into a checked research map. It can find the original paper or repository, expand it into related work, check whether the source is real, and explain what you can use directly versus what only offers a transferable idea. It also records missing evidence instead of filling gaps with confident guesses.
+
+In practice, you give it a name, link, screenshot, video caption, paper, repository, or research question. It returns the verified source, useful neighbors, reasons for the ranking, implementation or study constraints, and an evidence trail that you can inspect later.
 
 ## Quick Start
 
-On a native Agent Skills host, invoke `$research-discovery-and-translation-audit` or describe the task naturally. On an instruction-file host, the adapter routes matching requests to the same `SKILL.md`.
+The public name is **Research Source Radar**. On a native Agent Skills host, the internal invocation name remains `$research-discovery-and-translation-audit` for compatibility; you can also describe the task naturally. On an instruction-file host, the adapter routes matching requests to the same `SKILL.md`.
 
 | Goal | Example request |
 | --- | --- |
