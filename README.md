@@ -4,7 +4,7 @@
 
 **Find broadly. Verify identity. Translate mechanisms. Audit every claim.**
 
-![Status: pre-release](https://img.shields.io/badge/status-pre--release-F59E0B)
+![Status: public preview](https://img.shields.io/badge/status-public%20preview-2E8B57)
 ![Tests: 228 passing](https://img.shields.io/badge/tests-228%20passing-2E8B57)
 ![Runtime: Python 3.10+ standard library](https://img.shields.io/badge/runtime-Python%203.10%2B%20stdlib-3776AB)
 ![Portable Agent Skill](https://img.shields.io/badge/Agent%20Skill-portable-111827)
@@ -13,7 +13,7 @@
 
 </div>
 
-> **Pre-release preview.** This repository has not been published, and its final installation URL has not yet been selected.
+> **Public preview.** The repository is available for inspection and use. Cross-platform CI and wider independent evaluation remain ongoing.
 
 A portable Agent Skill for reproducible research discovery, authoritative source-identity verification, mechanism translation, and source-to-outcome auditing. It keeps two questions separate: **Can this source run directly?** and **Can its mechanism or evidence still transfer?**
 
@@ -132,8 +132,8 @@ Projects such as [LLMLingua](https://github.com/microsoft/LLMLingua) and [Mem0](
 Python 3.10 or later is required; runtime scripts use only the Python standard library. Clone the repository, then use the installer to copy the complete core into the selected host:
 
 ```bash
-git clone https://github.com/<owner>/<repository>.git
-cd <repository>
+git clone https://github.com/byby123byby/by-Research-Source-Radar.git
+cd by-Research-Source-Radar
 
 python3 scripts/install_skill.py --target codex-user
 python3 scripts/install_skill.py --target claude-user
@@ -329,7 +329,7 @@ Licensed under the [MIT License](LICENSE). Copies and substantial portions must 
 ## Before Publication
 
 - [x] Add the MIT License and include it in installed Skill packages.
-- [ ] Replace the placeholder GitHub installation URL.
+- [x] Replace the placeholder GitHub installation URL.
 - [ ] Add repository topics and a concise description.
 - [x] Run the complete local test, adversarial-input, documentation, and source-verification gates.
 - [x] Verify relative README links and English-Chinese section parity.

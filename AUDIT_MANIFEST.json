@@ -2,16 +2,16 @@
   "manifest_version": 1,
   "protocol_version": 2,
   "skill": "research-discovery-and-translation-audit",
-  "audited_at": "2026-07-17T07:54:52+00:00",
+  "audited_at": "2026-07-17T08:25:11+00:00",
   "result": "PASS_CONVERGED",
   "clean_streak": 2,
   "required_clean_rounds": 2,
-  "profile_sha256": "0c5a5c010c3f9488acf867a9111fcfc52c6e07c236938fa4167de58d53673588",
+  "profile_sha256": "bf56398c67db99d3a445ca928f5a6601c04fcf3387d361bcb9ccb2979695d1c2",
   "artifact": {
     "root": ".",
-    "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+    "artifact_sha256": "5ead7d76986036ee5678f5d41bb8308b6b6408199d4294e15fca0df87dc087a8",
     "file_count": 24,
-    "total_bytes": 672411,
+    "total_bytes": 672528,
     "files": [
       {
         "path": ".gitignore",
@@ -25,13 +25,13 @@
       },
       {
         "path": "README.md",
-        "size": 27077,
-        "sha256": "7bcf11011320702b5ec1b36629784cbbc9d302cd983874658bb4ce17fe60830d"
+        "size": 27128,
+        "sha256": "7f9037d21fab6907f98799e0a492a9dae0ca75ddbfdc97b75139bd3ac88cccd9"
       },
       {
         "path": "README.zh-CN.md",
-        "size": 24407,
-        "sha256": "ade16cd0c621180fcb8809f789555ecca969c65ad035599f137de87e86c5bac7"
+        "size": 24473,
+        "sha256": "acdec9850560a9a17eaed5a87e8b9bba3395e4d3cfd3af05ae1eeb8918b38d75"
       },
       {
         "path": "RELEASE_COMPLETENESS.json",
@@ -226,7 +226,7 @@
       "required": true,
       "status": "passed",
       "returncode": 0,
-      "duration_ms": 237,
+      "duration_ms": 249,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "summary": "",
       "failure_tail": ""
@@ -237,8 +237,8 @@
       "required": true,
       "status": "passed",
       "returncode": 0,
-      "duration_ms": 10388,
-      "output_sha256": "63b5bb1962dc3ca1500e8fa827d6d9ca2fca60c406c8b92fe25b27ea644a920b",
+      "duration_ms": 10857,
+      "output_sha256": "76a263f68c369944d881aab4c9c5c1c6f62249c2cf076ecec14d4bc4dbdf3600",
       "summary": "ERROR: schema_version must be 1",
       "failure_tail": ""
     },
@@ -248,7 +248,7 @@
       "required": true,
       "status": "passed",
       "returncode": 0,
-      "duration_ms": 130,
+      "duration_ms": 168,
       "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
       "summary": "All checks passed!",
       "failure_tail": ""
@@ -259,7 +259,7 @@
       "required": true,
       "status": "passed",
       "returncode": 0,
-      "duration_ms": 607,
+      "duration_ms": 613,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "summary": "",
       "failure_tail": ""
@@ -270,7 +270,7 @@
       "required": true,
       "status": "passed",
       "returncode": 0,
-      "duration_ms": 1542,
+      "duration_ms": 1515,
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "summary": "",
       "failure_tail": ""
@@ -281,7 +281,7 @@
       "required": true,
       "status": "passed",
       "returncode": 0,
-      "duration_ms": 550,
+      "duration_ms": 633,
       "output_sha256": "71144743c83babea384888a735db0c4daba3d4d7b7942b6839984bd5c21b52bb",
       "summary": "Success: no issues found in 4 source files",
       "failure_tail": ""
@@ -302,20 +302,6 @@
   ],
   "stop_reason": "Two consecutive clean rounds used the same frozen artifact and audit profile.",
   "history": [
-    {
-      "audited_at": "2026-07-17T00:28:14+00:00",
-      "profile_sha256": "0d326437e86f608aeb1c93cfbbf4f4d8dcc0168a367be41e23b0b1ac057abe06",
-      "artifact_sha256": "fa40c5857ec7b2ed357e1bd04a2d15407dd30b0a0182a20ebdc06f1efe5ad023",
-      "clean": true,
-      "result": "CLEAN_ROUND_1"
-    },
-    {
-      "audited_at": "2026-07-17T00:28:34+00:00",
-      "profile_sha256": "0d326437e86f608aeb1c93cfbbf4f4d8dcc0168a367be41e23b0b1ac057abe06",
-      "artifact_sha256": "fa40c5857ec7b2ed357e1bd04a2d15407dd30b0a0182a20ebdc06f1efe5ad023",
-      "clean": true,
-      "result": "PASS_CONVERGED"
-    },
     {
       "audited_at": "2026-07-17T00:56:49+00:00",
       "profile_sha256": "7214142b9ce4cd3e1056ee31ea4702054f04e46c082a34cd814c31143004859e",
@@ -369,6 +355,20 @@
       "audited_at": "2026-07-17T07:54:52+00:00",
       "profile_sha256": "0c5a5c010c3f9488acf867a9111fcfc52c6e07c236938fa4167de58d53673588",
       "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+      "clean": true,
+      "result": "PASS_CONVERGED"
+    },
+    {
+      "audited_at": "2026-07-17T08:24:57+00:00",
+      "profile_sha256": "bf56398c67db99d3a445ca928f5a6601c04fcf3387d361bcb9ccb2979695d1c2",
+      "artifact_sha256": "5ead7d76986036ee5678f5d41bb8308b6b6408199d4294e15fca0df87dc087a8",
+      "clean": true,
+      "result": "CLEAN_ROUND_1"
+    },
+    {
+      "audited_at": "2026-07-17T08:25:11+00:00",
+      "profile_sha256": "bf56398c67db99d3a445ca928f5a6601c04fcf3387d361bcb9ccb2979695d1c2",
+      "artifact_sha256": "5ead7d76986036ee5678f5d41bb8308b6b6408199d4294e15fca0df87dc087a8",
       "clean": true,
       "result": "PASS_CONVERGED"
     }
