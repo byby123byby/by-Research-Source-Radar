@@ -330,6 +330,12 @@ The suite covers contract validation, structured seed provenance and mechanism f
 
 Latest local audit, 17 July 2026: the release preview passes 228/228 tests on macOS with the locally configured Python runtime. Production coverage, fuzzing, and source-verification details are reported in the dated audit manifest that accompanies the release. Final installed-package synchronization and two-round strict convergence are rerun after every release edit. A commit-pinned GitHub Actions matrix is included for Python 3.10 and 3.13 on macOS, Linux, and Windows, but Linux and Windows success must not be claimed until that workflow has run in the published repository. These are dated, bounded results, not proof of no latent defects, exhaustive requirements, universal retrieval improvement, or exhaustive discovery.
 
+## Feedback and Contributions
+
+If you find a missing project, an incorrect source identity, a weak relevance match, an incomplete mechanism translation, or a reproducible bug, please [open an issue](https://github.com/byby123byby/by-Research-Source-Radar/issues/new). A useful report includes the research question or seed, the expected result, the observed result, relevant public URLs, and the date or mode used. Please redact private manuscripts, participant data, API keys, and other sensitive material.
+
+Contributions are welcome through pull requests. New discovery or verification behavior should preserve provenance and claim boundaries, include documentation, and add a focused test where practical. A small, reproducible change is easier to review than a large bundle of unrelated changes.
+
 ## License
 
 Licensed under the [MIT License](LICENSE). Copies and substantial portions must retain the copyright and license notice. The license permits use, modification, distribution, sublicensing, and commercial use, without warranty.
@@ -342,7 +348,7 @@ Licensed under the [MIT License](LICENSE). Copies and substantial portions must 
 - [x] Run the complete local test, adversarial-input, documentation, and source-verification gates.
 - [x] Verify relative README links and English-Chinese section parity.
 - [ ] Confirm the first published macOS, Linux, and Windows CI matrix run.
-- [ ] Add contribution or release policies only when they can be maintained.
+- [x] Add a lightweight issue and contribution guide that can be maintained.
 - [ ] Consider additional README translations after the initial release.
 
 ## Documentation Inspiration

@@ -705,6 +705,7 @@ class ResearchContractTests(unittest.TestCase):
             ("Retrieval Effectiveness Benchmark", "检索效果 A/B Benchmark"),
             ("Audit Convergence", "审计收敛"),
             ("Tests", "测试"),
+            ("Feedback and Contributions", "反馈与贡献"),
             ("License", "许可证"),
             ("Before Publication", "正式发布前"),
             ("Documentation Inspiration", "文档设计参考"),
