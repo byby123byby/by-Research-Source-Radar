@@ -1,0 +1,377 @@
+{
+  "manifest_version": 1,
+  "protocol_version": 2,
+  "skill": "research-discovery-and-translation-audit",
+  "audited_at": "2026-07-17T07:54:04+00:00",
+  "result": "PASS_CONVERGED",
+  "clean_streak": 2,
+  "required_clean_rounds": 2,
+  "profile_sha256": "e574d6a7bb52bdf2a7defe2afd637ba5f1d5e5f575a8d5f2312a28cae098f989",
+  "artifact": {
+    "root": ".",
+    "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+    "file_count": 24,
+    "total_bytes": 672411,
+    "files": [
+      {
+        "path": ".gitignore",
+        "size": 40,
+        "sha256": "6f1fe172df6d8a75c57a95e7b1afdfb48a1a0bb52181887ac337b628e74527ba"
+      },
+      {
+        "path": "LICENSE",
+        "size": 1064,
+        "sha256": "99008a2954182b589b74442995b08d067fd331ec83cc735e841d2e33018814a9"
+      },
+      {
+        "path": "README.md",
+        "size": 27077,
+        "sha256": "7bcf11011320702b5ec1b36629784cbbc9d302cd983874658bb4ce17fe60830d"
+      },
+      {
+        "path": "README.zh-CN.md",
+        "size": 24407,
+        "sha256": "ade16cd0c621180fcb8809f789555ecca969c65ad035599f137de87e86c5bac7"
+      },
+      {
+        "path": "RELEASE_COMPLETENESS.json",
+        "size": 20708,
+        "sha256": "e4f323c058b03923508d4f255c23a88655557ed6767cc7383e9ba96c5a5897c4"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 35754,
+        "sha256": "2050ccb301c0631f38bcb00a18e1b6786916ee00741b23bfe4dfbc2f5f82aa36"
+      },
+      {
+        "path": ".github/workflows/test.yml",
+        "size": 1196,
+        "sha256": "d05391859629aea45e3381eb02c1fcd6f14b96fe07ad61081c68bef2b777250d"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 512,
+        "sha256": "6b032623f78cc59ea624ce4baccc1daf9d5db7a6ff91093ae8c97b6e24b542a8"
+      },
+      {
+        "path": "references/audit-convergence.md",
+        "size": 3521,
+        "sha256": "5729a853ec7237e6e6569963ead7b69d847ae8db8e5093c3d2e75987a354b716"
+      },
+      {
+        "path": "references/contract-schema.md",
+        "size": 16564,
+        "sha256": "85e4855451e696c855f23e2fef0e3afb29eebf440e2bcd720acef62b48ce4f10"
+      },
+      {
+        "path": "references/discovery-protocol.md",
+        "size": 11169,
+        "sha256": "21c5aa35c4a24ec8d12a8169ec0c1e561b3a6b3de9b3f5a699cd8ae81e08fad5"
+      },
+      {
+        "path": "references/domain-profiles.md",
+        "size": 4853,
+        "sha256": "7df63ee3e248566af59ff9453ce8d8d8cccb6d0605c52ee28b9f9cd8f00da809"
+      },
+      {
+        "path": "references/portability.md",
+        "size": 6204,
+        "sha256": "4b148b605519e57edd9580a64cf92d949aa82a45b7b800b4d5ef68fa1e89cb18"
+      },
+      {
+        "path": "references/release-requirements.md",
+        "size": 2166,
+        "sha256": "cd1d2618edd1066c1b63b17618699c4c5e489879c64f4b0bfe1b5aa4a9a1bb7c"
+      },
+      {
+        "path": "references/retrieval-ab-evaluation.md",
+        "size": 9040,
+        "sha256": "d735064d14fd2c732fab77c97c244d1904b60027290ce53c601bb6b8c0414405"
+      },
+      {
+        "path": "references/seed-to-neighbor-discovery.md",
+        "size": 7253,
+        "sha256": "b6fdedef361657a6caa90a0962f47e2f3841449dadab526a2b1fa74cc4b2cc10"
+      },
+      {
+        "path": "references/supervision-retrieval-ab-tasks.json",
+        "size": 23663,
+        "sha256": "af267571a7f6aa13bec4a50794a462c541d2cb6fec4be26f2115709e996ca2ce"
+      },
+      {
+        "path": "scripts/audit_release.py",
+        "size": 32629,
+        "sha256": "6904918d3f6798e142ec89d2feb216ed59d59d5aeb372c776e9e2938deb8b67e"
+      },
+      {
+        "path": "scripts/install_skill.py",
+        "size": 28287,
+        "sha256": "e078bfcbab4124ade3317a37e9291e2133af0f711d876eb0f8e8b004e2fc33d7"
+      },
+      {
+        "path": "scripts/research_contract.py",
+        "size": 163178,
+        "sha256": "a4a1d949d8d920f0511adb391c470efcfc3e2c35bac2a8cf2356d4b272a3dd7f"
+      },
+      {
+        "path": "scripts/retrieval_ab_benchmark.py",
+        "size": 68466,
+        "sha256": "2aea5ad2f128584432dfd2694347534c976b4c7293953e2b5c1a3ad4d9171c12"
+      },
+      {
+        "path": "scripts/test_audit_release.py",
+        "size": 19096,
+        "sha256": "e1905ca8c54e36536dd79f2cc43429f8c0319ea4ed8d5f31ded001cc9bc6a9fc"
+      },
+      {
+        "path": "scripts/test_research_contract.py",
+        "size": 138948,
+        "sha256": "4d96edba754e58272a5a5af59c76bf3216492b7ea12aa176f7393f5fe402a320"
+      },
+      {
+        "path": "scripts/test_retrieval_ab_benchmark.py",
+        "size": 26616,
+        "sha256": "f8a063f1d50e58a71c08a15307fb4ef750777eda17e45be1e3e71fbc034ca034"
+      }
+    ],
+    "excluded": [
+      "AUDIT_MANIFEST.json",
+      ".git/",
+      "Python/tool caches",
+      "*.pyc"
+    ]
+  },
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.9.6",
+    "python_implementation": "CPython",
+    "strict_tools": false,
+    "tool_versions": {
+      "ruff": {
+        "mode": "module",
+        "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "executable_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+        "version": "0.5.7"
+      },
+      "pyflakes": {
+        "mode": "module",
+        "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "executable_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+        "version": "3.2.0"
+      },
+      "bandit": {
+        "mode": "module",
+        "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "executable_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+        "version": "1.7.10"
+      },
+      "mypy": {
+        "mode": "module",
+        "executable": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "executable_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+        "version": "1.14.1"
+      }
+    }
+  },
+  "audit_matrix": [
+    {
+      "area": "package-integrity",
+      "evidence": "bounded file inventory, hashes, type and symlink checks"
+    },
+    {
+      "area": "runtime",
+      "evidence": "clean compile under the recorded Python runtime"
+    },
+    {
+      "area": "behavior-security",
+      "evidence": "unit, adversarial, discovery-contract, installer, and security regression suite"
+    },
+    {
+      "area": "source-to-outcome-completeness",
+      "evidence": "machine matrix binds requirements, claims, data, triggers, behavior, outputs, tests, compatibility, documentation, and residual boundaries"
+    },
+    {
+      "area": "static-analysis",
+      "evidence": "Ruff, Pyflakes, Bandit, and strict mypy when required"
+    },
+    {
+      "area": "documentation",
+      "evidence": "automated link, anchor, bilingual-parity, and claim-boundary tests"
+    },
+    {
+      "area": "retrieval-effectiveness-framework",
+      "evidence": "paired condition isolation, frozen tasks, blind pooling, strict scoring inputs, and bounded claims"
+    },
+    {
+      "area": "convergence",
+      "evidence": "two consecutive clean rounds over the same artifact and profile hash"
+    }
+  ],
+  "checks": [
+    {
+      "id": "release-completeness",
+      "category": "traceability",
+      "required": true,
+      "status": "passed",
+      "requirements": 9,
+      "capabilities": 9,
+      "covered_requirements": 9,
+      "matrix_sha256": "a8e88f3085131bd815458c6c36bb5e612b2ddbc930fef7760c4d269e1f8978df",
+      "errors": [],
+      "reason": "all declared requirements have complete source-to-outcome mappings"
+    },
+    {
+      "id": "compile",
+      "category": "runtime",
+      "required": true,
+      "status": "passed",
+      "returncode": 0,
+      "duration_ms": 262,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "",
+      "failure_tail": ""
+    },
+    {
+      "id": "unit-adversarial-security-tests",
+      "category": "behavior",
+      "required": true,
+      "status": "passed",
+      "returncode": 0,
+      "duration_ms": 11005,
+      "output_sha256": "85f79252cd81595d47ec47a9b9cfc0d8c18b4d70bdb4c84ac450eff2e42e7879",
+      "summary": "ERROR: schema_version must be 1",
+      "failure_tail": ""
+    },
+    {
+      "id": "ruff",
+      "category": "static-analysis",
+      "required": true,
+      "status": "passed",
+      "returncode": 0,
+      "duration_ms": 173,
+      "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "summary": "All checks passed!",
+      "failure_tail": ""
+    },
+    {
+      "id": "pyflakes",
+      "category": "static-analysis",
+      "required": true,
+      "status": "passed",
+      "returncode": 0,
+      "duration_ms": 628,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "",
+      "failure_tail": ""
+    },
+    {
+      "id": "bandit",
+      "category": "static-analysis",
+      "required": true,
+      "status": "passed",
+      "returncode": 0,
+      "duration_ms": 1574,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "",
+      "failure_tail": ""
+    },
+    {
+      "id": "mypy",
+      "category": "static-analysis",
+      "required": true,
+      "status": "passed",
+      "returncode": 0,
+      "duration_ms": 626,
+      "output_sha256": "71144743c83babea384888a735db0c4daba3d4d7b7942b6839984bd5c21b52bb",
+      "summary": "Success: no issues found in 4 source files",
+      "failure_tail": ""
+    }
+  ],
+  "findings": {
+    "errors": [],
+    "warnings": []
+  },
+  "uncovered": [
+    "Unknown defects outside the declared audit matrix",
+    "Platforms not executed in this audit environment",
+    "Live third-party service behavior and future dependency changes",
+    "Scientific validity and exhaustive discovery",
+    "Seed-to-neighbor discovery recall, precision, and user benefit",
+    "Retrieval effectiveness until the frozen A/B trials are completed and independently judged",
+    "The completeness matrix cannot prove that its declared requirement inventory is exhaustive"
+  ],
+  "stop_reason": "Two consecutive clean rounds used the same frozen artifact and audit profile.",
+  "history": [
+    {
+      "audited_at": "2026-07-16T23:58:49+00:00",
+      "profile_sha256": "40727fa49825ffca4e6683363b05715aec5e4f9cfead4363fb368c455f6e87cd",
+      "artifact_sha256": "b749ca40e9683278ee097efc6e8981e631d1a3656d43e44043ae84a830e9ad3a",
+      "clean": true,
+      "result": "CLEAN_ROUND_1"
+    },
+    {
+      "audited_at": "2026-07-16T23:59:07+00:00",
+      "profile_sha256": "40727fa49825ffca4e6683363b05715aec5e4f9cfead4363fb368c455f6e87cd",
+      "artifact_sha256": "b749ca40e9683278ee097efc6e8981e631d1a3656d43e44043ae84a830e9ad3a",
+      "clean": true,
+      "result": "PASS_CONVERGED"
+    },
+    {
+      "audited_at": "2026-07-17T00:28:14+00:00",
+      "profile_sha256": "0d326437e86f608aeb1c93cfbbf4f4d8dcc0168a367be41e23b0b1ac057abe06",
+      "artifact_sha256": "fa40c5857ec7b2ed357e1bd04a2d15407dd30b0a0182a20ebdc06f1efe5ad023",
+      "clean": true,
+      "result": "CLEAN_ROUND_1"
+    },
+    {
+      "audited_at": "2026-07-17T00:28:34+00:00",
+      "profile_sha256": "0d326437e86f608aeb1c93cfbbf4f4d8dcc0168a367be41e23b0b1ac057abe06",
+      "artifact_sha256": "fa40c5857ec7b2ed357e1bd04a2d15407dd30b0a0182a20ebdc06f1efe5ad023",
+      "clean": true,
+      "result": "PASS_CONVERGED"
+    },
+    {
+      "audited_at": "2026-07-17T00:56:49+00:00",
+      "profile_sha256": "7214142b9ce4cd3e1056ee31ea4702054f04e46c082a34cd814c31143004859e",
+      "artifact_sha256": "fc01961c18aec7c7ebbf2d73ee7bd221606af497db802e9a29aadf7f28d66d93",
+      "clean": true,
+      "result": "CLEAN_ROUND_1"
+    },
+    {
+      "audited_at": "2026-07-17T00:57:08+00:00",
+      "profile_sha256": "7214142b9ce4cd3e1056ee31ea4702054f04e46c082a34cd814c31143004859e",
+      "artifact_sha256": "fc01961c18aec7c7ebbf2d73ee7bd221606af497db802e9a29aadf7f28d66d93",
+      "clean": true,
+      "result": "PASS_CONVERGED"
+    },
+    {
+      "audited_at": "2026-07-17T07:16:19+00:00",
+      "profile_sha256": "0c5a5c010c3f9488acf867a9111fcfc52c6e07c236938fa4167de58d53673588",
+      "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+      "clean": true,
+      "result": "CLEAN_ROUND_1"
+    },
+    {
+      "audited_at": "2026-07-17T07:16:52+00:00",
+      "profile_sha256": "0c5a5c010c3f9488acf867a9111fcfc52c6e07c236938fa4167de58d53673588",
+      "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+      "clean": true,
+      "result": "PASS_CONVERGED"
+    },
+    {
+      "audited_at": "2026-07-17T07:53:44+00:00",
+      "profile_sha256": "e574d6a7bb52bdf2a7defe2afd637ba5f1d5e5f575a8d5f2312a28cae098f989",
+      "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+      "clean": true,
+      "result": "CLEAN_ROUND_1"
+    },
+    {
+      "audited_at": "2026-07-17T07:54:04+00:00",
+      "profile_sha256": "e574d6a7bb52bdf2a7defe2afd637ba5f1d5e5f575a8d5f2312a28cae098f989",
+      "artifact_sha256": "02b468924563846d119ff77a412b67809c470bcb45acd1bd721f83aa48976924",
+      "clean": true,
+      "result": "PASS_CONVERGED"
+    }
+  ],
+  "claim_boundary": "PASS_CONVERGED means the recorded checks passed twice without an artifact or profile change. It is not proof that no unknown defect exists."
+}

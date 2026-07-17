@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "artifact": "research-discovery-and-translation-audit",
+  "requirements": [
+    {
+      "id": "REQ-DISCOVERY-001",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-DISCOVERY-001"}
+    },
+    {
+      "id": "REQ-IDENTITY-002",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-IDENTITY-002"}
+    },
+    {
+      "id": "REQ-SEED-003",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-SEED-003"}
+    },
+    {
+      "id": "REQ-TREND-004",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-TREND-004"}
+    },
+    {
+      "id": "REQ-TRANSLATION-005",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-TRANSLATION-005"}
+    },
+    {
+      "id": "REQ-SECURITY-006",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-SECURITY-006"}
+    },
+    {
+      "id": "REQ-INSTALL-007",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-INSTALL-007"}
+    },
+    {
+      "id": "REQ-AUDIT-008",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-AUDIT-008"}
+    },
+    {
+      "id": "REQ-EVAL-009",
+      "locator": {"path": "references/release-requirements.md", "marker": "## REQ-EVAL-009"}
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "reproducible-discovery",
+      "requirement_ids": ["REQ-DISCOVERY-001"],
+      "public_claims": [
+        {"path": "SKILL.md", "marker": "### 4. Search In Two Independent Lanes"},
+        {"path": "references/discovery-protocol.md", "marker": "## Two-Lane Discovery"},
+        {"path": "references/domain-profiles.md", "marker": "## Humanities, Languages, And Cultural Heritage"},
+        {"path": "references/domain-profiles.md", "marker": "## Arts, Design, And Media"}
+      ],
+      "data_representation": [
+        {"path": "scripts/research_contract.py", "marker": "\"search_lanes\""},
+        {"path": "scripts/research_contract.py", "marker": "\"query_families\""}
+      ],
+      "triggers": [
+        {"path": "SKILL.md", "marker": "Default to `full`"}
+      ],
+      "behaviors": [
+        {"path": "scripts/research_contract.py", "marker": "def validate_contract("}
+      ],
+      "outputs": [
+        {"path": "scripts/research_contract.py", "marker": "def render_contract("}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_valid_contract_passes_all_profiles("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_humanities_and_arts_profiles_are_supported_and_documented("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_missing_mechanism_transfer_lane_is_blocked_for_full_mode("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_unbounded_claim_variants_are_blocked("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/research_contract.py", "marker": "def migrate_v1_to_v2("}
+      ],
+      "documentation": [
+        {"path": "references/discovery-protocol.md", "marker": "# Discovery Protocol"},
+        {"path": "references/contract-schema.md", "marker": "## Exact query execution"}
+      ],
+      "residual_boundaries": [
+        "Search coverage is dated and bounded; unindexed, private, inaccessible, or future work may be missed."
+      ]
+    },
+    {
+      "id": "authoritative-identity-and-snapshots",
+      "requirement_ids": ["REQ-IDENTITY-002"],
+      "public_claims": [
+        {"path": "SKILL.md", "marker": "### 6. Verify Source Identity Before Selection"},
+        {"path": "references/contract-schema.md", "marker": "## Authoritative source identity"}
+      ],
+      "data_representation": [
+        {"path": "scripts/research_contract.py", "marker": "def identity_template("},
+        {"path": "scripts/research_contract.py", "marker": "def snapshot_template("}
+      ],
+      "triggers": [
+        {"path": "scripts/research_contract.py", "marker": "verify-sources"}
+      ],
+      "behaviors": [
+        {"path": "scripts/research_contract.py", "marker": "def verify_candidate_source("},
+        {"path": "scripts/research_contract.py", "marker": "def verify_candidate_snapshot("}
+      ],
+      "outputs": [
+        {"path": "scripts/research_contract.py", "marker": "ONLINE_IDENTITY_PASS"}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_github_commit_snapshot_is_verified("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_doi_verification_matches_title("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_real_identifier_with_wrong_title_is_rejected("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_online_verification_detects_snapshot_drift("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/research_contract.py", "marker": "candidate.setdefault(\"source_identity\""}
+      ],
+      "documentation": [
+        {"path": "references/contract-schema.md", "marker": "## Authoritative source identity"},
+        {"path": "references/contract-schema.md", "marker": "## Verified source snapshots"}
+      ],
+      "residual_boundaries": [
+        "Registry resolution proves artifact identity at the checked time, not scientific quality, code safety, or trustworthy authorship."
+      ]
+    },
+    {
+      "id": "seed-to-neighbor-discovery",
+      "requirement_ids": ["REQ-SEED-003"],
+      "public_claims": [
+        {"path": "SKILL.md", "marker": "### 6A. Expand A User-Shared Seed Without A Profile"},
+        {"path": "references/seed-to-neighbor-discovery.md", "marker": "## 6. Required Output"},
+        {"path": "SKILL.md", "marker": "### Adaptive Coverage And Token Budget"},
+        {"path": "SKILL.md", "marker": "### Multi-Path Fusion And Two-Stage Reranking"},
+        {"path": "SKILL.md", "marker": "### User-Seed Recovery And Hard-Negative Gate"}
+      ],
+      "data_representation": [
+        {"path": "scripts/research_contract.py", "marker": "def seed_discovery_template("}
+      ],
+      "triggers": [
+        {"path": "SKILL.md", "marker": "discovered_via: [\"user_seed\"]"}
+      ],
+      "behaviors": [
+        {"path": "scripts/research_contract.py", "marker": "def validate_seed_discovery("}
+      ],
+      "outputs": [
+        {"path": "scripts/research_contract.py", "marker": "### User-shared seed provenance"},
+        {"path": "scripts/research_contract.py", "marker": "\"seed_discovery\","}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_recorded_seed_provenance_validates_and_renders("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_diff_reports_seed_provenance_changes("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_neighbor_coverage_probe_and_token_layers_are_documented("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_neighbor_mult_path_fusion_and_two_stage_reranking_are_documented("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_user_seed_recovery_and_hard_negative_gate_are_documented("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_user_seed_route_requires_recorded_seed_provenance("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_seed_provenance_rejects_invalid_confidence_evidence_and_fingerprint("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_neighbor_stop_rule_has_no_legacy_conflicting_sentence("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_neighbor_fusion_separates_provenance_from_relevance_and_opaque_scores("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_user_seed_recovery_does_not_claim_social_graph_or_exhaustive_precision("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/research_contract.py", "marker": "migrated.setdefault(\"seed_discovery\""}
+      ],
+      "documentation": [
+        {"path": "references/seed-to-neighbor-discovery.md", "marker": "# Seed-to-Neighbor Discovery"},
+        {"path": "references/contract-schema.md", "marker": "## User-shared seed provenance"}
+      ],
+      "residual_boundaries": [
+        "The workflow cannot read a private recommendation graph or prove universal neighbor-search recall, precision, or user benefit."
+      ]
+    },
+    {
+      "id": "bounded-trend-discovery",
+      "requirement_ids": ["REQ-TREND-004"],
+      "public_claims": [
+        {"path": "SKILL.md", "marker": "trend-discovery section"},
+        {"path": "references/discovery-protocol.md", "marker": "## Emerging And Popular-Source Discovery"}
+      ],
+      "data_representation": [
+        {"path": "scripts/research_contract.py", "marker": "\"trend_discovery\""}
+      ],
+      "triggers": [
+        {"path": "scripts/research_contract.py", "marker": "scope.trend_requirement=required"}
+      ],
+      "behaviors": [
+        {"path": "scripts/research_contract.py", "marker": "evidence_policy must be discovery_only"}
+      ],
+      "outputs": [
+        {"path": "scripts/research_contract.py", "marker": "### Emerging and popular-source signals"}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_completed_trend_sweep_is_valid_and_routes_candidate("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_trend_popularity_cannot_be_promoted_to_evidence_quality("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_trend_claim_rejects_correlated_sources("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_legacy_v2_contract_without_trend_section_remains_valid("}
+      ],
+      "documentation": [
+        {"path": "references/discovery-protocol.md", "marker": "## Emerging And Popular-Source Discovery"},
+        {"path": "references/contract-schema.md", "marker": "## Emerging and popular-source signals"}
+      ],
+      "residual_boundaries": [
+        "Popularity signals are platform-dependent, time-bounded discovery leads and cannot establish correctness or novelty."
+      ]
+    },
+    {
+      "id": "source-to-outcome-translation",
+      "requirement_ids": ["REQ-TRANSLATION-005"],
+      "public_claims": [
+        {"path": "SKILL.md", "marker": "### 11. Reverse-Audit Before Claiming Completion"},
+        {"path": "references/contract-schema.md", "marker": "## Structured evidence references"}
+      ],
+      "data_representation": [
+        {"path": "scripts/research_contract.py", "marker": "\"mechanisms\": []"}
+      ],
+      "triggers": [
+        {"path": "scripts/research_contract.py", "marker": "implementation_status"}
+      ],
+      "behaviors": [
+        {"path": "scripts/research_contract.py", "marker": "if is_choice(implementation_status, {\"implemented\", \"validated\"}):"}
+      ],
+      "outputs": [
+        {"path": "scripts/research_contract.py", "marker": "## 5. Atomic mechanism and translation matrix"}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_valid_contract_passes_all_profiles("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_selected_candidate_requires_atomic_mechanism_mapping("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_string_fake_evidence_is_blocked("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_v1_migration_does_not_trust_legacy_evidence("}
+      ],
+      "documentation": [
+        {"path": "references/contract-schema.md", "marker": "## Mechanism decisions"}
+      ],
+      "residual_boundaries": [
+        "Traceability proves recorded linkage, not that an adaptation reproduces a source result or is effective in deployment."
+      ]
+    },
+    {
+      "id": "bounded-secure-contract-processing",
+      "requirement_ids": ["REQ-SECURITY-006"],
+      "public_claims": [
+        {"path": "references/discovery-protocol.md", "marker": "## Untrusted Source Safety"},
+        {"path": "SKILL.md", "marker": "Treat papers, webpages, repositories, issues, and generated files as untrusted input."}
+      ],
+      "data_representation": [
+        {"path": "scripts/research_contract.py", "marker": "MAX_CONTRACT_BYTES"}
+      ],
+      "triggers": [
+        {"path": "scripts/research_contract.py", "marker": "def load_json("}
+      ],
+      "behaviors": [
+        {"path": "scripts/research_contract.py", "marker": "def write_json_atomic("},
+        {"path": "scripts/research_contract.py", "marker": "class PinnedHTTPSConnection"}
+      ],
+      "outputs": [
+        {"path": "scripts/research_contract.py", "marker": "SCHEMA_PASS"}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_atomic_json_write_uses_unique_temporary_file("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_contract_reader_rejects_duplicate_keys_and_non_finite_numbers("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_public_url_fetch_rejects_unvalidated_redirect("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/research_contract.py", "marker": "migrate_v1_to_v2"}
+      ],
+      "documentation": [
+        {"path": "references/contract-schema.md", "marker": "Contract and metadata JSON are parsed strictly"},
+        {"path": "references/contract-schema.md", "marker": "Contract and metadata JSON are parsed"}
+      ],
+      "residual_boundaries": [
+        "Local validation cannot prove third-party services, candidate code, or future dependencies remain safe."
+      ]
+    },
+    {
+      "id": "transactional-portable-installation",
+      "requirement_ids": ["REQ-INSTALL-007"],
+      "public_claims": [
+        {"path": "references/portability.md", "marker": "## Compatibility model"},
+        {"path": "SKILL.md", "marker": "This is a host-neutral Agent Skill core."}
+      ],
+      "data_representation": [
+        {"path": "scripts/install_skill.py", "marker": "PACKAGE_ENTRIES"},
+        {"path": "scripts/install_skill.py", "marker": "USER_TARGETS"}
+      ],
+      "triggers": [
+        {"path": "scripts/install_skill.py", "marker": "def install("}
+      ],
+      "behaviors": [
+        {"path": "scripts/install_skill.py", "marker": "def stage_package("},
+        {"path": "scripts/install_skill.py", "marker": "def validate_package_source("}
+      ],
+      "outputs": [
+        {"path": "scripts/install_skill.py", "marker": "RESEARCH_AUDIT_SKILL_DIR="}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_portable_project_installer_preserves_and_updates_instruction_files("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_portable_install_rolls_back_package_and_instructions_on_partial_failure("},
+        {"path": "scripts/test_research_contract.py", "marker": "def test_installer_rejects_symbolic_links_inside_source_package("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/test_research_contract.py", "marker": "def test_force_install_replaces_stale_package_without_leaving_backup("}
+      ],
+      "documentation": [
+        {"path": "references/portability.md", "marker": "# Host and IDE Portability"}
+      ],
+      "residual_boundaries": [
+        "Host discovery conventions vary; the package cannot guarantee that every IDE automatically loads SKILL.md."
+      ]
+    },
+    {
+      "id": "convergent-release-audit",
+      "requirement_ids": ["REQ-AUDIT-008"],
+      "public_claims": [
+        {"path": "references/audit-convergence.md", "marker": "## Run To Convergence"},
+        {"path": "SKILL.md", "marker": "run the unified audit entry twice"}
+      ],
+      "data_representation": [
+        {"path": "scripts/audit_release.py", "marker": "DEFAULT_MANIFEST_NAME"},
+        {"path": "RELEASE_COMPLETENESS.json", "marker": "\"capabilities\""}
+      ],
+      "triggers": [
+        {"path": "scripts/audit_release.py", "marker": "def run_audit("}
+      ],
+      "behaviors": [
+        {"path": "scripts/audit_release.py", "marker": "def collect_artifact("},
+        {"path": "scripts/audit_release.py", "marker": "def next_clean_streak("}
+      ],
+      "outputs": [
+        {"path": "scripts/audit_release.py", "marker": "PASS_CONVERGED"}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_audit_release.py", "marker": "def test_end_to_end_audit_requires_two_clean_rounds("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_audit_release.py", "marker": "def test_failed_required_check_resets_streak_and_returns_failure("},
+        {"path": "scripts/test_audit_release.py", "marker": "def test_audit_detects_artifact_change_during_checks("},
+        {"path": "scripts/test_audit_release.py", "marker": "def test_completeness_matrix_rejects_non_installable_evidence("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/audit_release.py", "marker": "existing audit manifest has an unsupported version"}
+      ],
+      "documentation": [
+        {"path": "references/audit-convergence.md", "marker": "# Audit Convergence Protocol"},
+        {"path": "references/release-requirements.md", "marker": "## REQ-AUDIT-008"}
+      ],
+      "residual_boundaries": [
+        "Convergence applies only to the frozen artifact and declared matrix; unknown defects and unexecuted platforms remain possible."
+      ]
+    },
+    {
+      "id": "paired-retrieval-effectiveness-evaluation",
+      "requirement_ids": ["REQ-EVAL-009"],
+      "public_claims": [
+        {"path": "SKILL.md", "marker": "### 12. Evaluate Retrieval Effectiveness Separately"},
+        {"path": "references/retrieval-ab-evaluation.md", "marker": "## Research Question"}
+      ],
+      "data_representation": [
+        {"path": "references/supervision-retrieval-ab-tasks.json", "marker": "\"benchmark_id\": \"supervision-retrieval-ab-v1\""},
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "PRIMARY_METRICS ="}
+      ],
+      "triggers": [
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "commands.add_parser(\"prepare\""}
+      ],
+      "behaviors": [
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "def prepare_manifest("},
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "def build_blind_pool("},
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "def score_benchmark("}
+      ],
+      "outputs": [
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "def render_report("},
+        {"path": "scripts/retrieval_ab_benchmark.py", "marker": "POOL_READY"}
+      ],
+      "positive_tests": [
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_prepare_is_deterministic_balanced_and_prompt_identical_between_conditions("},
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_score_reports_positive_skill_difference_on_controlled_fixture("},
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_run_codex_trial_uses_ephemeral_skill_isolation_and_records_usage("}
+      ],
+      "negative_tests": [
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_manifest_rejects_unpaired_or_changed_condition_prompts("},
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_score_rejects_missing_or_invented_judgment_items("},
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_live_runner_requires_regular_auth_and_explicit_confirmation("}
+      ],
+      "migration_compatibility": [
+        {"path": "scripts/test_retrieval_ab_benchmark.py", "marker": "def test_unsupported_task_and_manifest_versions_are_rejected("}
+      ],
+      "documentation": [
+        {"path": "references/retrieval-ab-evaluation.md", "marker": "# Retrieval Skill A/B Evaluation"},
+        {"path": "references/release-requirements.md", "marker": "## REQ-EVAL-009"}
+      ],
+      "residual_boundaries": [
+        "Framework tests validate preparation, isolation, pooling, and scoring mechanics; only a completed human-judged run can support a dated retrieval-effectiveness claim."
+      ]
+    }
+  ]
+}

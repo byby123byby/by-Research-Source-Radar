@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "supervision-retrieval-ab-v1",
+  "cutoff_date": "2026-07-16",
+  "research_question": "Under a fixed model, tool set, cutoff date, and execution budget, does the research-discovery-and-translation-audit Skill improve the relevance, validity, constraint fit, and efficiency of literature and open-source discovery for SuperVision compared with the same agent without the Skill?",
+  "primary_metrics": [
+    "ndcg_at_10",
+    "valid_high_relevance_sources"
+  ],
+  "safety_metrics": [
+    "invalid_source_rate",
+    "completion"
+  ],
+  "efficiency_metrics": [
+    "valid_relevant_per_1k_tokens",
+    "valid_relevant_per_minute",
+    "wall_seconds",
+    "total_tokens"
+  ],
+  "task_sets": {
+    "pilot": [
+      "TASK-001",
+      "TASK-006",
+      "TASK-011",
+      "TASK-016",
+      "TASK-021",
+      "TASK-023",
+      "TASK-026",
+      "TASK-029"
+    ],
+    "main": [
+      "TASK-001",
+      "TASK-002",
+      "TASK-003",
+      "TASK-004",
+      "TASK-005",
+      "TASK-006",
+      "TASK-007",
+      "TASK-008",
+      "TASK-009",
+      "TASK-010",
+      "TASK-011",
+      "TASK-012",
+      "TASK-013",
+      "TASK-014",
+      "TASK-015",
+      "TASK-016",
+      "TASK-017",
+      "TASK-018",
+      "TASK-019",
+      "TASK-020",
+      "TASK-021",
+      "TASK-022",
+      "TASK-023",
+      "TASK-024",
+      "TASK-025",
+      "TASK-026",
+      "TASK-027",
+      "TASK-028",
+      "TASK-029",
+      "TASK-030"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "category": "exact_identity",
+      "prompt": "Find and verify the canonical Graphiti project and the strongest primary paper or technical source explaining its temporal knowledge-graph memory. Explain which mechanisms could improve SuperVision's App-location memory without adding a server runtime to the iPhone.",
+      "constraints": ["Non-jailbroken iPhone", "No computer or remote browser at runtime", "Do not add Python or a graph database to the Broadcast Extension", "VoiceOver-compatible and auditable"],
+      "source_types": ["github_repository", "paper", "official_document"],
+      "time_sensitive": false,
+      "evaluation_focus": "Canonical identity, temporal validity, provenance, and mechanism transfer."
+    },
+    {
+      "id": "TASK-002",
+      "category": "exact_identity",
+      "prompt": "Find the canonical Cognee repository and authoritative documentation or papers for its AI memory engine. Separate directly reusable components from mechanisms that would need a lightweight Swift reimplementation for SuperVision.",
+      "constraints": ["Independent iPhone runtime", "No Python service in production", "Low Broadcast Extension memory", "Auditable source-to-mechanism mapping"],
+      "source_types": ["github_repository", "paper", "official_document"],
+      "time_sensitive": false,
+      "evaluation_focus": "Identity resolution, graph/RAG memory mechanisms, and deployment fit."
+    },
+    {
+      "id": "TASK-003",
+      "category": "exact_identity",
+      "prompt": "Find Alibaba PageAgent and primary sources describing how it performs low-token web interaction. Assess what can be adapted into SuperVision's iOS Safari extension without a remote browser.",
+      "constraints": ["Safari Web Extension on a physical iPhone", "No desktop browser session", "DOM actions require outcome evidence", "VoiceOver must remain usable"],
+      "source_types": ["github_repository", "paper", "official_document", "technical_blog"],
+      "time_sensitive": false,
+      "evaluation_focus": "Client-side DOM compression, action execution, verification, and runtime mismatch."
+    },
+    {
+      "id": "TASK-004",
+      "category": "exact_identity",
+      "prompt": "Find Apple's canonical FastVLM repository and paper. Assess whether its smallest model is a plausible optional foreground verifier for SuperVision and identify iOS version, memory, latency, and background-execution constraints.",
+      "constraints": ["Non-jailbroken iPhone", "Broadcast Extension must retain a model-free path", "No unsupported background GPU assumption", "Optional feature only"],
+      "source_types": ["github_repository", "paper", "model", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Primary identity, device requirements, model size, and bounded fit."
+    },
+    {
+      "id": "TASK-005",
+      "category": "exact_identity",
+      "prompt": "Find the canonical WhisperKit project and its strongest primary technical sources. Compare it with sherpa-onnx for streaming multilingual ASR or language detection in SuperVision.",
+      "constraints": ["Swift/iOS deployment", "Chinese-English switching", "Low latency", "Must not worsen AVAudioSession conflicts", "Model size and energy matter"],
+      "source_types": ["github_repository", "paper", "official_document", "model"],
+      "time_sensitive": true,
+      "evaluation_focus": "Verified projects, streaming capability, bilingual behavior, and integration risks."
+    },
+    {
+      "id": "TASK-006",
+      "category": "ambiguous_seed",
+      "prompt": "A short video describes an open-source tool called something like 'Graphify' that converts code or documents into a knowledge graph using AST or semantic extraction. Resolve the likely canonical project, list plausible alternatives, and find related mechanisms useful for SuperVision memory.",
+      "constraints": ["Treat the short-video wording as an unverified lead", "Do not assume the first name match is correct", "No Python runtime may be embedded in the iPhone app", "Preserve uncertainty"],
+      "source_types": ["github_repository", "paper", "official_document", "technical_blog"],
+      "time_sensitive": false,
+      "evaluation_focus": "Ambiguous-name resolution, alternatives, provenance, and typed relation extraction."
+    },
+    {
+      "id": "TASK-007",
+      "category": "ambiguous_seed",
+      "prompt": "A video mentions a JD open-source multimodal interaction model named approximately JoyAI-VL-Interaction that separates a real-time loop from a slower reasoning loop. Resolve the project and primary report, then assess its relevance to SuperVision latency.",
+      "constraints": ["Do not rely on the video as technical evidence", "Independent iPhone remains the deployment target", "Large models are not assumed to fit the Broadcast Extension", "Streaming feedback must remain accessible"],
+      "source_types": ["github_repository", "paper", "model", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Seed resolution, fast/slow loop mechanisms, frame freshness, and transfer limits."
+    },
+    {
+      "id": "TASK-008",
+      "category": "ambiguous_seed",
+      "prompt": "Resolve TencentDB Agent Memory or the closest canonical Tencent open-source project described as layered L0-L3 agent memory. Identify authoritative sources and mechanisms that could strengthen SuperVision's evidence hierarchy.",
+      "constraints": ["Do not import TypeScript or database services into iOS", "Raw evidence must remain traceable", "Storage and retrieval must be bounded", "Do not repeat vendor benchmark claims as SuperVision results"],
+      "source_types": ["github_repository", "paper", "official_document", "technical_blog"],
+      "time_sensitive": true,
+      "evaluation_focus": "Canonical identity, layered memory, provenance, and claim boundaries."
+    },
+    {
+      "id": "TASK-009",
+      "category": "ambiguous_seed",
+      "prompt": "Resolve the research project called OaK or Oak that claims to learn continually from experience and construct self-verifying temporal abstractions. Find primary sources, related published algorithms, and clearly state what is not publicly reproducible.",
+      "constraints": ["No claim of exact reproduction without code and algorithm details", "SuperVision permits only bounded low-risk learning", "No random exploration on a blind user's device", "Evidence must distinguish official claims from related papers"],
+      "source_types": ["paper", "preprint", "official_document", "technical_blog", "github_repository"],
+      "time_sensitive": true,
+      "evaluation_focus": "Disambiguation, source authority, related algorithm lineage, and reproducibility boundary."
+    },
+    {
+      "id": "TASK-010",
+      "category": "ambiguous_seed",
+      "prompt": "A creator says 'NexttieAlpha' is an on-device cognitive model that autonomously controls iOS offline. Determine whether a real canonical project or paper matches this spelling or description, preserve unresolved alternatives, and reject unsupported claims.",
+      "constraints": ["Do not invent a source", "Search spelling and phonetic variants", "Distinguish native iOS capability from Mac/WDA demonstrations", "Report unresolved identity honestly"],
+      "source_types": ["github_repository", "paper", "preprint", "model", "technical_blog"],
+      "time_sensitive": true,
+      "evaluation_focus": "Nonexistent or ambiguous source handling and unsupported iOS-autonomy claims."
+    },
+    {
+      "id": "TASK-011",
+      "category": "similar_work",
+      "prompt": "Starting from Cognee, find related open-source memory systems that combine graph structure, retrieval, temporal validity, or provenance. Rank them by mechanism value for SuperVision rather than by whether their runtime can be installed on iOS.",
+      "constraints": ["Search both directly deployable and mechanism-transfer work", "Independent iPhone runtime", "No server framework added to Broadcast Extension", "Token and memory cost matter"],
+      "source_types": ["github_repository", "paper", "preprint", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Neighbor discovery breadth, deduplication, and mechanism-transfer relevance."
+    },
+    {
+      "id": "TASK-012",
+      "category": "similar_work",
+      "prompt": "Starting from Browser Use, find related browser agents or client-side page agents whose ideas could support a phone-local Safari assistant. Separate remote-browser systems from mechanisms suitable for an iOS Safari extension.",
+      "constraints": ["No remote browser at runtime", "No computer dependency", "Actual DOM outcome evidence is required", "Dangerous actions require confirmation"],
+      "source_types": ["github_repository", "paper", "preprint", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Related-project coverage and deployment-aware ranking."
+    },
+    {
+      "id": "TASK-013",
+      "category": "similar_work",
+      "prompt": "Starting from PageAgent, find neighboring research and open-source work on DOM compression, local browser action planning, workflow memory, or verified web actions that could lower SuperVision latency.",
+      "constraints": ["Physical iPhone Safari", "No UI tree for arbitrary third-party apps", "Low-risk actions may be batched only with evidence", "Keep VoiceOver feedback responsive"],
+      "source_types": ["github_repository", "paper", "preprint", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Mechanism-level neighbors and low-latency relevance."
+    },
+    {
+      "id": "TASK-014",
+      "category": "similar_work",
+      "prompt": "Find open-source or published GUI-agent memory systems related to UI-Mem, MementoGUI, or experience replay that store successful and failed interaction histories. Assess transfer to SuperVision's screenshot-first memory.",
+      "constraints": ["No arbitrary autonomous tapping", "Failure memories must change future planning", "Visual evidence storage must be privacy- and memory-bounded", "iOS standalone runtime"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Source reality, episodic/procedural/negative memory, and transfer constraints."
+    },
+    {
+      "id": "TASK-015",
+      "category": "similar_work",
+      "prompt": "Find current open-source streaming ASR, VAD, language-identification, or entity-correction projects suitable for experimental Swift/iOS integration. Focus on Chinese-English switching and app-name confusions.",
+      "constraints": ["Low latency", "No persistent large model in ReplayKit Broadcast", "Must preserve existing speech fallback", "Evaluate model size, license, and maintenance"],
+      "source_types": ["github_repository", "paper", "model", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Current alternatives, authoritative identity, and bounded integration value."
+    },
+    {
+      "id": "TASK-016",
+      "category": "current_landscape",
+      "prompt": "Find the most relevant 2025-2026 papers and open-source projects on mobile GUI agents that perceive screenshots and plan actions. Identify which require Android accessibility, desktop control, WDA, or unrestricted automation and which mechanisms remain useful for SuperVision.",
+      "constraints": ["Frozen cutoff date applies", "Non-jailbroken iPhone", "No computer at runtime", "Screenshot-first perception", "Blind-user safety and auditability"],
+      "source_types": ["paper", "preprint", "github_repository", "dataset"],
+      "time_sensitive": true,
+      "evaluation_focus": "Recent coverage, source verification, platform assumptions, and mechanism transfer."
+    },
+    {
+      "id": "TASK-017",
+      "category": "current_landscape",
+      "prompt": "Find current on-device vision-language models and Swift/iOS runtimes that might support a small foreground screen verifier. Compare primary evidence for model size, device requirements, latency, and limitations.",
+      "constraints": ["Optional foreground experiment", "No mandatory cloud replacement claim", "Broadcast retains deterministic fallback", "No unsupported background GPU use"],
+      "source_types": ["model", "paper", "github_repository", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Recent authoritative model/runtime landscape and realistic fit."
+    },
+    {
+      "id": "TASK-018",
+      "category": "current_landscape",
+      "prompt": "Find current open multimodal systems that can listen, see, speak, stream, and handle interruption. Assess which architectural ideas could improve SuperVision without assuming the full model runs on an iPhone Broadcast Extension.",
+      "constraints": ["Full-duplex accessibility interaction", "Low perceived latency", "No large resident Broadcast model assumption", "Cloud calls remain optional and auditable"],
+      "source_types": ["paper", "preprint", "model", "github_repository", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Recent full-duplex systems, primary reports, and transferable scheduling mechanisms."
+    },
+    {
+      "id": "TASK-019",
+      "category": "current_landscape",
+      "prompt": "Find current agent-memory work using temporal knowledge graphs, hierarchical memory, skill distillation, or token-efficient retrieval. Prioritize sources that report mechanisms and failure boundaries, not marketing summaries.",
+      "constraints": ["SuperVision uses lightweight Swift Codable storage", "No Neo4j or Python service on device", "Memory must support correction and expiry", "Evidence provenance is required"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Current breadth, primary evidence, memory lifecycle, and token-efficiency mechanisms."
+    },
+    {
+      "id": "TASK-020",
+      "category": "current_landscape",
+      "prompt": "Find current low-latency browser-agent work that reduces model calls through local DOM reasoning, multi-action steps, workflow reuse, event-driven observation, or fast/slow loops. Rank evidence relevant to phone-local Safari.",
+      "constraints": ["No remote browser runtime", "Actions occur on the user's iPhone", "Navigation and risky actions remain verified stepwise", "Latency metrics must be source-specific"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document", "technical_blog"],
+      "time_sensitive": true,
+      "evaluation_focus": "Recent latency mechanisms, independent sources, and deployment boundary."
+    },
+    {
+      "id": "TASK-021",
+      "category": "mechanism_transfer",
+      "prompt": "Find research or open-source mechanisms for stable App or UI-entity identity when OCR text, icons, positions, badges, or layouts drift. Translate the best-supported mechanisms into a lightweight SuperVision design.",
+      "constraints": ["Screenshot and OCR are primary observations", "No third-party iOS accessibility tree", "App additions, removals, moves, and icon changes must not erase identity", "On-device storage is bounded"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": false,
+      "evaluation_focus": "Cross-domain mechanism discovery, evidence, and deployable translation."
+    },
+    {
+      "id": "TASK-022",
+      "category": "mechanism_transfer",
+      "prompt": "Find mechanisms for temporal fact validity and supersession that can represent an App moving from one home-screen page to another without deleting history. Propose an auditable bounded representation for SuperVision.",
+      "constraints": ["Current location and historical location are distinct", "Old facts must expire or be superseded", "Per-App history has a hard cap", "Full provenance remains in an append-only audit trail"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": false,
+      "evaluation_focus": "Temporal graph mechanisms, compaction, and provenance."
+    },
+    {
+      "id": "TASK-023",
+      "category": "mechanism_transfer",
+      "prompt": "Find research or open-source designs that learn from failed GUI actions or explicit user corrections such as 'not this page'. Translate them into a negative-memory rule that prevents SuperVision from repeating the same bad suggestion.",
+      "constraints": ["User correction overrides weak inference", "No unsafe trial-and-error", "Failure must trigger replanning", "Every revision is auditable"],
+      "source_types": ["paper", "preprint", "github_repository"],
+      "time_sensitive": false,
+      "evaluation_focus": "Failure-memory evidence, planning effect, and bounded learning."
+    },
+    {
+      "id": "TASK-024",
+      "category": "mechanism_transfer",
+      "prompt": "Find methods for bilingual ASR entity resolution and confusion memory that can map Airbnb, 爱彼迎, phonetic variants, and recognition errors to one entity while keeping 百度 and 百度网盘 distinct.",
+      "constraints": ["Chinese and English share canonical App identity", "Exact longer names must not collapse into shorter names", "User-taught aliases are persistent", "Fast local path required"],
+      "source_types": ["paper", "preprint", "github_repository", "model"],
+      "time_sensitive": true,
+      "evaluation_focus": "Entity ontology, phonetic retrieval, confusion edges, and ambiguity safeguards."
+    },
+    {
+      "id": "TASK-025",
+      "category": "mechanism_transfer",
+      "prompt": "Find skill-graph, option, or workflow-compilation approaches that can turn repeated successful home-screen navigation into a reusable plan with prerequisites, expected observations, and recovery steps.",
+      "constraints": ["Actions remain bounded by iOS permissions", "Each page transition is re-observed", "Success requires target evidence", "Unsafe actions are never explored automatically"],
+      "source_types": ["paper", "preprint", "github_repository"],
+      "time_sensitive": true,
+      "evaluation_focus": "Composable skills, model-based planning, verification, and transfer boundary."
+    },
+    {
+      "id": "TASK-026",
+      "category": "mechanism_transfer",
+      "prompt": "Find methods for proving that a GUI or browser action actually succeeded rather than trusting a model's 'done' statement. Translate them into evidence requirements for SuperVision Safari actions.",
+      "constraints": ["Outcome evidence must follow the action", "Unrelated late page changes cannot count", "Inputs, clicks, navigation, and submissions need action-specific evidence", "Dangerous actions require confirmation"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": false,
+      "evaluation_focus": "Action-grounding evidence, temporal binding, and failure handling."
+    },
+    {
+      "id": "TASK-027",
+      "category": "mechanism_transfer",
+      "prompt": "Find fast/slow agent architectures, event-driven observation, caching, or speculative local planning methods that could reduce SuperVision's perceived latency while preserving streaming input and output.",
+      "constraints": ["Blind users need immediate progress feedback", "Stale frames and requests must be dropped", "Cloud timeout needs local fallback", "Do not trade away action verification"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Latency mechanisms, primary measurements, and accessible feedback."
+    },
+    {
+      "id": "TASK-028",
+      "category": "mechanism_transfer",
+      "prompt": "Find tamper-evident logging and provenance mechanisms suitable for a local iOS research audit trail. Compare hash chains, external anchors, concurrency controls, and truncation detection without proposing blockchain by default.",
+      "constraints": ["Phone-local operation", "Concurrent writers may exist", "Tail deletion and whole-file replacement must be detectable when possible", "Do not claim non-repudiation without an external trust anchor"],
+      "source_types": ["paper", "official_document", "github_repository", "standard"],
+      "time_sensitive": false,
+      "evaluation_focus": "Security mechanism fit, threat model, and bounded claims."
+    },
+    {
+      "id": "TASK-029",
+      "category": "mechanism_transfer",
+      "prompt": "Find the strongest research and open-source ideas for an assistive agent that observes screenshots, plans, remembers, and acts only through iOS-permitted channels on a non-jailbroken standalone phone. Identify what remains impossible in arbitrary third-party apps.",
+      "constraints": ["No computer, WDA, Appium, or remote browser at runtime", "No jailbreak", "VoiceOver-compatible", "App Intents, Siri, URL schemes, Safari extension, speech, haptics, and user-confirmed gestures are allowed"],
+      "source_types": ["paper", "preprint", "github_repository", "official_document"],
+      "time_sensitive": true,
+      "evaluation_focus": "Constraint-aware synthesis, platform boundary, and assistive-agent mechanisms."
+    },
+    {
+      "id": "TASK-030",
+      "category": "mechanism_transfer",
+      "prompt": "Find evaluation methods and datasets relevant to testing a screenshot-first assistive GUI agent with VoiceOver enabled. Propose measures for task success, speech latency, correction recovery, memory persistence, and user safety without claiming BLV benefit from engineering logs alone.",
+      "constraints": ["Engineering validation is distinct from a BLV participant study", "VoiceOver condition must be explicit", "Failures and manual verification remain visible", "Future participant work requires ethics approval"],
+      "source_types": ["paper", "dataset", "official_document", "github_repository"],
+      "time_sensitive": true,
+      "evaluation_focus": "Methodological relevance, accessibility condition, metrics, and claim calibration."
+    }
+  ]
+}
