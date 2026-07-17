@@ -15,9 +15,11 @@
 
 > **Public preview.** The repository is available for inspection and use. Cross-platform CI and wider independent evaluation remain ongoing.
 
-Research Source Radar turns a vague research lead into a checked research map. It can find the original paper or repository, expand it into related work, check whether the source is real, and explain what you can use directly versus what only offers a transferable idea. It also records missing evidence instead of filling gaps with confident guesses.
+Have you ever asked an AI to find papers or open-source projects related to an essay, paper, or research project, only to receive a long list that is less relevant than the few sources you found yourself?
 
-In practice, you give it a name, link, screenshot, video caption, paper, repository, or research question. It returns the verified source, useful neighbors, reasons for the ranking, implementation or study constraints, and an evidence trail that you can inspect later.
+Research Source Radar is designed for that gap. Give it a research question, project name, paper, screenshot, video lead, or rough description. It finds the original source, expands it into related papers and repositories, and explains which results you can use directly and which are useful only as transferable ideas.
+
+It also checks whether a source really exists, keeps unresolved leads visible, and points out missing links between sources, implementations, evidence, and conclusions.
 
 ## Quick Start
 
@@ -46,6 +48,10 @@ The skill can start from only a project name. It searches for candidates, resolv
 - auditing whether reported claims are supported and whether important constraints, tests, or limitations were omitted.
 
 It supports computing, health, social science, experimental science, education, law and policy, business, humanities, languages, cultural heritage, arts, design, media, and multidisciplinary work. Domain-specific appraisal standards remain distinct.
+
+**What makes it different**
+
+It does not simply return a list of links. Each candidate is separated into material that can be used directly, a mechanism that needs adaptation, background context, or a source whose identity or evidence remains uncertain. The search scope, verification result, unresolved gaps, and reasoning are kept in a record that can be checked later.
 
 ## Inputs and Outputs
 
